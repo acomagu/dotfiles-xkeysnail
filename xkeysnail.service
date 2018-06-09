@@ -1,0 +1,12 @@
+[Unit]
+Description=xkeysnail
+
+[Service]
+KillMode=process
+ExecStart=/usr/bin/sudo /home/linuxbrew/.linuxbrew/bin/xkeysnail /home/yuki/.config/xkeysnail/config.py
+ExecStop=/usr/bin/sudo /usr/bin/killall xkeysnail
+Restart=always
+Environment=DISPLAY=:0.0
+
+[Install]
+WantedBy=graphical.target
